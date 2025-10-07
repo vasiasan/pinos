@@ -190,13 +190,9 @@ const TEXT_DONE: string = 'Start!'
 const TEXT_LINES: string = 'Lines'
 const TEXT_NEXT_POLY: string[] = ['Next', 'Shape']
 const TEXT_OPTIONS_HEADLINES: string[] = ['Options', '']
-const TEXT_OPTIONS_POLYS_TAB: string = 'Shapes'
-const TEXT_OPTIONS_POLYS: string[][] = [
-    ['Tetrominoes (Standard)', 'Pentominoes (Difficult)', 'Both']
-]
-const TEXT_OPTIONS_SPEED_TAB: string = 'Start Speed'
+const TEXT_OPTIONS_SPEED_TAB: string = 'Start Level'
 const TEXT_OPTIONS_SPEED: string[][] = [
-    ['Standard', 'Quicker', 'Fastest']
+    ['Standart', 'Medium', 'Fast']
 ]
 const TEXT_TITLES: string[] = ['Minos']
 
@@ -457,11 +453,9 @@ function buildSettingsScreen(): void {
     settingsScreen.headlines.font = image.font5
     settingsScreen.footer.font = image.font5
     settingsScreen.doneText = TEXT_DONE
-    settingsScreen.addScreen(TEXT_OPTIONS_POLYS_TAB, TEXT_OPTIONS_POLYS, false)
     settingsScreen.addScreen(TEXT_OPTIONS_SPEED_TAB, TEXT_OPTIONS_SPEED, false)
-    // Default settings: use tetrominoes with standard drop speed.
+    // Default settings: level 1
     settingsScreen.setSelectionForScreen(0, 0, 0)
-    settingsScreen.setSelectionForScreen(1, 0, 0)
 }   // buildSettingsScreen()
 
 function buildSplashScreen(): void {
@@ -817,19 +811,8 @@ function initGameSprites(): void {
  * Initialize the gameShapes variable.
  */
 function initShapes(): void {
-    switch (settingsScreen.getSelectionForScreen(0, 0)) {
-        case 0:
-            gameShapes = TETROMINOES
-            break
-
-        case 1:
-            gameShapes = PENTOMINOES
-            break
-
-        case 2:
-            gameShapes = TETROMINOES.concat(PENTOMINOES)
-            break
-    }   // switch (settingsScreen.getSelectionForScreen(0, 0))
+    // Always use tetrominoes
+    gameShapes = TETROMINOES
 }   // initShapes()
 
 /**
@@ -842,7 +825,7 @@ function initVars(): void {
     autoDrop = false
     info.setScore(0)
 
-    let startLevel: number = STARTING_LEVELS[settingsScreen.getSelectionForScreen(1, 0)]
+    let startLevel: number = STARTING_LEVELS[settingsScreen.getSelectionForScreen(0, 0)]
     dropInterval = Math.round(DROP_INTERVAL_INITIAL * LEVEL_TIMER_FACTOR ** (startLevel - 1))
     info.setLifeImage(img`
         2 . 2 . 2 . 2 .

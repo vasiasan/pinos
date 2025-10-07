@@ -51,7 +51,7 @@ interface Polyomino {
 /**
  * Constants
  */
-const BLOCK_SIZE: number = 5
+const BLOCK_SIZE: number = 6
 const COLUMNS: number = 10
 const ROWS: number = 20
 
@@ -197,435 +197,6 @@ const TETROMINOES: Polyomino[] = [
     }
 ]
 
-const PENTOMINOES: Polyomino[] = [
-    // I
-    {
-        blocks: [
-            [
-                'XXXXX'
-            ], [
-                'X',
-                'X',
-                'X',
-                'X',
-                'X'
-            ]
-        ],
-        colors: {
-            borderColor: Color.Wine,
-            fillColor: Color.Pink
-        }
-    },
-    // F
-    {
-        blocks: [
-            [
-                '.XX',
-                'XX.',
-                '.X.'
-            ], [
-                '.X.',
-                'XXX',
-                '..X'
-            ], [
-                '.X.',
-                '.XX',
-                'XX.'
-            ], [
-                'X..',
-                'XXX',
-                '.X.'
-            ]
-        ],
-        colors: {
-            borderColor: Color.Wine,
-            fillColor: Color.Brown
-        }
-    },
-    // 7
-    {
-        blocks: [
-            [
-                'XX.',
-                '.XX',
-                '.X.'
-            ], [
-                '..X',
-                'XXX',
-                '.X.'
-            ], [
-                '.X.',
-                'XX.',
-                '.XX'
-            ], [
-                '.X.',
-                'XXX',
-                'X..'
-            ]
-        ],
-        colors: {
-            borderColor: Color.Wine,
-            fillColor: Color.Brown
-        }
-    },
-    // J
-    {
-        blocks: [
-            [
-                '.X',
-                '.X',
-                '.X',
-                'XX'
-            ], [
-                'X...',
-                'XXXX'
-            ], [
-                'XX',
-                'X.',
-                'X.',
-                'X.'
-            ], [
-                'XXXX',
-                '...X'
-            ]
-        ],
-        colors: {
-            borderColor: Color.Wine,
-            fillColor: Color.Yellow
-        }
-    },
-    // L
-    {
-        blocks: [
-            [
-                'X.',
-                'X.',
-                'X.',
-                'XX'
-            ], [
-                'XXXX',
-                'X...'
-            ], [
-                'XX',
-                '.X',
-                '.X',
-                '.X'
-            ], [
-                '...X',
-                'XXXX'
-            ]
-        ],
-        colors: {
-            borderColor: Color.Wine,
-            fillColor: Color.Yellow
-        }
-    },
-    // Q
-    {
-        blocks: [
-            [
-                'XX',
-                'XX',
-                '.X'
-            ], [
-                '.XX',
-                'XXX'
-            ], [
-                'X.',
-                'XX',
-                'XX'
-            ], [
-                'XXX',
-                'XX.'
-            ]
-        ],
-        colors: {
-            borderColor: Color.Wine,
-            fillColor: Color.Bone
-        }
-    },
-    // P
-    {
-        blocks: [
-            [
-                'XX',
-                'XX',
-                'X.'
-            ], [
-                'XXX',
-                '.XX'
-            ], [
-                '.X',
-                'XX',
-                'XX'
-            ], [
-                'XX.',
-                'XXX'
-            ]
-        ],
-        colors: {
-            borderColor: Color.Wine,
-            fillColor: Color.Bone
-        }
-    },
-    // N
-    {
-        blocks: [
-            [
-                '.X',
-                '.X',
-                'XX',
-                'X.'
-            ], [
-                'XX..',
-                '.XXX'
-            ], [
-                '.X',
-                'XX',
-                'X.',
-                'X.'
-            ], [
-                'XXX.',
-                '..XX'
-            ]
-        ],
-        colors: {
-            borderColor: Color.Wine,
-            fillColor: Color.BrightGreen
-        }
-    },
-    // Reversed N
-    {
-        blocks: [
-            [
-                'X.',
-                'X.',
-                'XX',
-                '.X'
-            ], [
-                '.XXX',
-                'XX..'
-            ], [
-                'X.',
-                'XX',
-                '.X',
-                '.X'
-            ], [
-                '..XX',
-                'XXX.'
-            ]
-        ],
-        colors: {
-            borderColor: Color.Wine,
-            fillColor: Color.BrightGreen
-        }
-    },
-    // T
-    {
-        blocks: [
-            [
-                'XXX',
-                '.X.',
-                '.X.'
-            ], [
-                '..X',
-                'XXX',
-                '..X'
-            ], [
-                '.X.',
-                '.X.',
-                'XXX'
-            ], [
-                'X..',
-                'XXX',
-                'X..'
-            ]
-        ],
-        colors: {
-            borderColor: Color.Wine,
-            fillColor: Color.Orange
-        }
-    },
-    // U
-    {
-        blocks: [
-            [
-                'X.X',
-                'XXX'
-            ], [
-                'XX',
-                'X.',
-                'XX'
-            ], [
-                'XXX',
-                'X.X'
-            ], [
-                'XX',
-                '.X',
-                'XX'
-            ]
-        ],
-        colors: {
-            borderColor: Color.Wine,
-            fillColor: Color.Aqua
-        }
-    },
-    // V
-    {
-        blocks: [
-            [
-                '..X',
-                '..X',
-                'XXX'
-            ], [
-                'X..',
-                'X..',
-                'XXX'
-            ], [
-                'XXX',
-                'X..',
-                'X..'
-            ], [
-                'XXX',
-                '..X',
-                '..X'
-            ]
-        ],
-        colors: {
-            borderColor: Color.Wine,
-            fillColor: Color.White
-        }
-    },
-    // W
-    {
-        blocks: [
-            [
-                '..X',
-                '.XX',
-                'XX.'
-            ], [
-                'X..',
-                'XX.',
-                '.XX'
-            ], [
-                '.XX',
-                'XX.',
-                'X..'
-            ], [
-                'XX.',
-                '.XX',
-                '..X'
-            ]
-        ],
-        colors: {
-            borderColor: Color.Wine,
-            fillColor: Color.LightBlue
-        }
-    },
-    // X
-    {
-        blocks: [
-            [
-                '.X.',
-                'XXX',
-                '.X.'
-            ]
-        ],
-        colors: {
-            borderColor: Color.Wine,
-            fillColor: Color.Red
-        }
-    },
-    // Y
-    {
-        blocks: [
-            [
-                '.X',
-                'XX',
-                '.X',
-                '.X'
-            ], [
-                '..X.',
-                'XXXX'
-            ], [
-                'X.',
-                'X.',
-                'XX',
-                'X.'
-            ], [
-                'XXXX',
-                '.X..'
-            ]
-        ],
-        colors: {
-            borderColor: Color.Wine,
-            fillColor: Color.Purple
-        }
-    },
-    // h
-    {
-        blocks: [
-            [
-                'X.',
-                'XX',
-                'X.',
-                'X.'
-            ], [
-                'XXXX',
-                '..X.'
-            ], [
-                '.X',
-                '.X',
-                'XX',
-                '.X'
-            ], [
-                '.X..',
-                'XXXX'
-            ]
-        ],
-        colors: {
-            borderColor: Color.Wine,
-            fillColor: Color.Purple
-        }
-    },
-    // S
-    {
-        blocks: [
-            [
-                '.XX',
-                '.X.',
-                'XX.'
-            ], [
-                'X..',
-                'XXX',
-                '..X'
-            ]
-        ],
-        colors: {
-            borderColor: Color.Wine,
-            fillColor: Color.RoseBouquet
-        }
-    },
-    // Z
-    {
-        blocks: [
-            [
-                'XX.',
-                '.X.',
-                '.XX'
-            ], [
-                '..X',
-                'XXX',
-                'X..'
-            ]
-        ],
-        colors: {
-            borderColor: Color.Wine,
-            fillColor: Color.RoseBouquet
-        }
-    }
-]
-
 /**
  * Global variables
  */
@@ -650,32 +221,35 @@ function copyLine(source: number, destination: number): void {
  */
 function createCanvas(rows: number, columns: number): Image {
     return image.create(
-        columns * BLOCK_SIZE + 1,
-        rows * BLOCK_SIZE + 1
+        columns * BLOCK_SIZE + 4,  // +4 для рамок слева (2) и справа (2)
+        rows * BLOCK_SIZE
     )
 }   // createCanvas()
+
+/**
+ * @param {number} rows - Number of rows intended for preview canvas.
+ * @param {number} columns - Number of columns intended for preview canvas.
+ * @return {Image} Drawing canvas for preview with minimal borders.
+ */
+function createPreviewCanvas(rows: number, columns: number): Image {
+    return image.create(
+        columns * BLOCK_SIZE + 2,  // +2 для минимальной рамки
+        rows * BLOCK_SIZE + 2
+    )
+}   // createPreviewCanvas()
 
 /**
  * @param {Image} img - Drawing canvas.
  * @param {number} row - Row of block to draw.
  * @param {number} column - Column of block to draw.
  * @param {number} fillColor - Color for interior of block.
- * @param {number} borderColor - Color for highlight / shadow.
  */
-function drawBlock(img: Image, row: number, column: number, fillColor: number, borderColor: number): void {
-    let x1: number = column * BLOCK_SIZE
-    let x2: number = (column + 1) * BLOCK_SIZE
+function drawBlock(img: Image, row: number, column: number, fillColor: number): void {
+    let x1: number = column * BLOCK_SIZE + 2  // +2 для отступа слева
     let y1: number = row * BLOCK_SIZE
-    let y2: number = (row + 1) * BLOCK_SIZE
 
-    // Simple block - For debugging
-    // img.drawRect(x1, y1, BLOCK_SIZE, BLOCK_SIZE, fillColor)
-
-    // Filled block
+    // Заполненный блок без теней и рамок
     img.fillRect(x1, y1, BLOCK_SIZE, BLOCK_SIZE, fillColor)
-    // img.drawRect(x1, y1, BLOCK_SIZE, BLOCK_SIZE, borderColor)
-    img.drawLine(x1, y1, x1, y2 - 1, borderColor)
-    img.drawLine(x1, y1, x2 - 1, y1, borderColor)
 }   // drawBlock()
 
 /**
@@ -683,6 +257,11 @@ function drawBlock(img: Image, row: number, column: number, fillColor: number, b
  */
 function drawGameState(img: Image): void {
     img.fill(COLOR_BG)
+
+    // Рисуем рамки слева и справа
+    img.fillRect(0, 0, 2, ROWS * BLOCK_SIZE, Color.White)  // Левая рамка
+    img.fillRect(COLUMNS * BLOCK_SIZE + 2, 0, 2, ROWS * BLOCK_SIZE, Color.White)  // Правая рамка
+
     // Draw grid when debugging.
     // drawGrid(img, ROWS, COLUMNS, Color.Wine)
     for (let row: number = 0; row < ROWS; row++) {
@@ -690,8 +269,7 @@ function drawGameState(img: Image): void {
             let state: number = gameState[row][column]
             if (state > -1) {
                 drawBlock(img, row, column,
-                    gameShapes[state].colors.fillColor,
-                    gameShapes[state].colors.borderColor)
+                    gameShapes[state].colors.fillColor)
             }   // if (state > 0)
         }   // for (column)
     }   // for (row)
@@ -732,7 +310,10 @@ function drawPoly(img: Image, poly: Polyomino, row: number, column: number): voi
         c = column
         for (let char of s) {
             if (char !== '.') {
-                drawBlock(img, r, c, poly.colors.fillColor, poly.colors.borderColor)
+                // Рисуем блок с отступом в 1 пиксель для превью
+                let x1: number = c * BLOCK_SIZE + 1
+                let y1: number = r * BLOCK_SIZE + 1
+                img.fillRect(x1, y1, BLOCK_SIZE, BLOCK_SIZE, poly.colors.fillColor)
             }   // if (c)
             c++
         }   // for (c)
